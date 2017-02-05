@@ -12,21 +12,6 @@
 
 #include "main.h"
 
-#define THRESH 500 //threshold for line tracker
-#define motorLeft 2 //left wheels
-#define motorRight 3 //right wheels
-#define motorRotator 4 //rotates claw
-#define motorClaw 5 //open/closes claw
-#define leftLineSensor 1 //left line sensor
-#define rightLineSensor 2 //right line sensor
-
-void moveForward(int duration); //moves forward
-void turnRight(int duration); //turns right
-void turnLeft(int duration); //turns left
-void clawUp(int duration); //rotates claw upward
-void clawDown(int duration); //rotates claw downward
-void openClaw(int duration); //opens claw
-void closeClaw(int duration); //closes claw
 
 /*
  * Runs the user autonomous code. This function will be started in its own task with the default
@@ -43,66 +28,6 @@ void closeClaw(int duration); //closes claw
  * so, the robot will await a switch to another mode or disable/enable cycle.
  */
 void autonomous() {
-  moveForward(500);
-
-}
-
-//
 
 
-void turnClockwise() {
-
-}
-
-void turnCounterClockwise() {
-
-}
-
-
-void moveForward(int duration) {
-  motorSet(motorLeft, 127);
-  motorSet(motorRight, -127);
-  delay(duration);
-  motorStop(motorLeft);
-  motorStop(motorRight);
-}
-
-void moveRight(int duration) {
-  motorSet(motorLeft, 127);
-  motorSet(motorRight, 127);
-  delay(duration);
-  motorStop(motorLeft);
-  motorStop(motorRight);
-}
-
-void moveLeft(int duration) {
-  motorSet(motorLeft, -127);
-  motorSet(motorRight, -127);
-  delay(duration);
-  motorStop(motorLeft);
-  motorStop(motorRight);
-}
-
-void clawUp(int duration) {
-  motorSet(motorRotator, 50);
-  delay(duration);
-  motorStop(motorRotator);
-}
-
-void clawDown(int duration) {
-  motorSet(motorRotator, -50);
-  delay(duration);
-  motorStop(motorRotator);
-}
-
-void openClaw(int duration) {
-  motorSet(motorClaw, 25);
-  delay(duration);
-  motorStop(motorClaw);
-}
-
-void closeClaw(int duration) {
-  motorSet(motorClaw, -25);
-  delay(duration);
-  motorStop(motorClaw);
 }
